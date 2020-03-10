@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import Todo from "./Todo"
 import "./App.css"
-
+import TodoForm from './TodoForm'
 
 const App = (params) => {
   const [Todos,setTodos] = useState([{
@@ -17,10 +17,16 @@ const App = (params) => {
     isCompleted:false
   }])
 
+  const addTodo=text=>{
+    const NewTodos = [...Todos,{text}]
+    setTodos(NewTodos)
+  }
+
 return(
   <div className='app'>
     <div className="todo-list">
     {Todos.map((todo,index)=> (<Todo key={index} index={index} todo={todo}   />)) }
+    <TodoForm addTodo={addTodo}/>
     </div>
   </div>
 )
