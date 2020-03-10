@@ -22,10 +22,15 @@ const App = (params) => {
     setTodos(newTodos)
   }
 
+  const completeTodo = index =>{
+    const newTodo = [...Todos]
+    newTodo[index].isCompleted= true
+  }
+
 return(
   <div className='app'>
     <div className="todo-list">
-    {Todos.map((todo,index)=> (<Todo key={index} index={index} todo={todo}   />)) }
+    {Todos.map((todo,index)=> (<Todo key={index} index={index} todo={todo} />)) }
     <TodoForm addTodo={addTodo}/>
     </div>
   </div>
