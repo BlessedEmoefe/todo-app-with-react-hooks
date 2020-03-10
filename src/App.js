@@ -18,8 +18,8 @@ const App = (params) => {
   }])
 
   const addTodo=text=>{
-    const NewTodos = [...Todos,{text}]
-    setTodos(NewTodos)
+    const newTodos = [...Todos,{text}]
+    setTodos(newTodos)
   }
 
 return(
